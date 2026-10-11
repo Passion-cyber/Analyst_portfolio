@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+
+    <!-- Placeholders below are filled at build time from src/content/profile.ts (see vite.config.ts) -->
+    <title>{{TITLE}}</title>
+    <meta name="description" content="{{DESCRIPTION}}" />
+    <meta name="author" content="{{AUTHOR}}" />
+    <link rel="canonical" href="{{SITE_URL}}/" />
+    <meta name="theme-color" content="#050b1f" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#f5f7fc" media="(prefers-color-scheme: light)" />
+    <meta name="color-scheme" content="dark light" />
+
+    <!-- Open Graph / Twitter -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="{{AUTHOR}} · Data Analyst" />
+    <meta property="og:title" content="{{TITLE}}" />
+    <meta property="og:description" content="{{DESCRIPTION}}" />
+    <meta property="og:url" content="{{SITE_URL}}/" />
+    <meta property="og:image" content="{{SITE_URL}}/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="{{AUTHOR}} — turning messy data into clear business decisions" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="{{TITLE}}" />
+    <meta name="twitter:description" content="{{DESCRIPTION}}" />
+    <meta name="twitter:image" content="{{SITE_URL}}/og-image.png" />
+
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <script type="application/ld+json">{{JSON_LD}}</script>
+    <!-- Without JS, show scroll-revealed content immediately. -->
+    <noscript><style>.reveal,.reveal-item{opacity:1!important;transform:none!important}.skill-fill{transform:none!important}</style></noscript>
+
+    <!-- Apply the saved theme before first paint to avoid a flash. Dark is the default. -->
+    <script>
+      try {
+        if (localStorage.getItem('theme') === 'light') document.documentElement.classList.remove('dark')
+      } catch (e) {}
+    </script>
+  </head>
+  <body>
+    <noscript>
+      <p style="padding: 2rem; font-family: system-ui">
+        This portfolio needs JavaScript for its interactive charts. You can still reach {{AUTHOR}} by email.
+      </p>
+    </noscript>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

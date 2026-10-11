@@ -1,0 +1,263 @@
+/*
+ * Tailwind entry + theme tokens — the only stylesheet in the project.
+ * Colours are CSS variables so light/dark switch by toggling `.dark` on <html>.
+ * Tailwind utilities (bg-bg, text-fg, border-line, text-accent …) read these.
+ */
+@import 'tailwindcss';
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* ── Theme tokens ─────────────────────────────────────────────── */
+/* Deep-blue brand. All text/accent pairs meet WCAG AA (≥ 5:1) on every surface. */
+:root {
+  --bg: #f5f7fc;
+  --surface: #ffffff;
+  --surface-2: #eaeff8;
+  --line: #0a153017;
+  --line-strong: #0a15302b;
+  --fg: #0a1530;
+  --muted: #44516e;
+  --subtle: #56647f;
+  --accent: #1d4ed8;
+  --accent-strong: #1e40af;
+  --accent-fg: #ffffff;
+  --accent-glow: #2563eb33;
+  --chart-1: #2563eb; /* validated chart pair (dataviz validator, light) */
+  --chart-2: #b45309;
+  --grid-line: #0a15300d;
+  --shadow-card: 0 1px 2px #0a15300f, 0 12px 32px -12px #0a153026;
+  color-scheme: light;
+}
+
+.dark {
+  --bg: #050b1f;
+  --surface: #0a1430;
+  --surface-2: #0f1c3f;
+  --line: #93a8d61f;
+  --line-strong: #93a8d640;
+  --fg: #e8eefc;
+  --muted: #a3b2d1;
+  --subtle: #8495ba;
+  --accent: #4f8cff;
+  --accent-strong: #7aa8ff;
+  --accent-fg: #030a1c;
+  --accent-glow: #4f8cff40;
+  --chart-1: #3f7fe8; /* validated chart pair (dataviz validator, dark) */
+  --chart-2: #b8862f;
+  --grid-line: #93a8d612;
+  --shadow-card: 0 1px 0 #ffffff08 inset, 0 24px 48px -24px #000000b3;
+  color-scheme: dark;
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-line: var(--line);
+  --color-line-strong: var(--line-strong);
+  --color-fg: var(--fg);
+  --color-muted: var(--muted);
+  --color-subtle: var(--subtle);
+  --color-accent: var(--accent);
+  --color-accent-strong: var(--accent-strong);
+  --color-accent-fg: var(--accent-fg);
+  --color-accent-glow: var(--accent-glow);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --shadow-card: var(--shadow-card);
+}
+
+@theme {
+  --font-display: 'Space Grotesk Variable', ui-sans-serif, system-ui, sans-serif;
+  --font-sans: 'Inter Variable', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-mono: 'JetBrains Mono Variable', ui-monospace, 'SFMono-Regular', Menlo, monospace;
+
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* Every looping/entrance animation below uses only transform/opacity so it
+     runs on the compositor and costs no main-thread time. */
+  --animate-skeleton: skeleton-pulse 1.6s ease-in-out infinite;
+  --animate-pulse-dot: pulse-dot 2.4s ease-in-out infinite;
+  --animate-rise: rise 0.9s var(--ease-out-expo) both;
+  --animate-fade-up: fade-up 0.8s var(--ease-out-expo) both;
+  --animate-nudge-up: nudge-up 0.8s var(--ease-out-expo) both;
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-bob: bob 2s ease-in-out infinite;
+
+  @keyframes skeleton-pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.55; }
+  }
+  @keyframes pulse-dot {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.35; transform: scale(0.8); }
+  }
+  /* Hero headline words slide up from behind an overflow mask. */
+  @keyframes rise {
+    from { transform: translateY(105%); }
+  }
+  @keyframes fade-up {
+    from { opacity: 0; transform: translateY(16px); }
+  }
+  /* Transform-only entrance: the text is visible (and counts for LCP) from the first paint. */
+  @keyframes nudge-up {
+    from { transform: translateY(14px); }
+  }
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-6px); }
+  }
+  @keyframes bob {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(6px); }
+  }
+}
+
+/* Used by inline styles (ToolOrbit), so defined outside @theme to always be emitted. */
+@keyframes orbit {
+  to { transform: rotate(360deg); }
+}
+@keyframes orbit-reverse {
+  to { transform: rotate(-360deg); }
+}
+
+/* ── Scroll reveal (see components/ui/Reveal.tsx) ─────────────────
+   CSS transitions toggled by one shared IntersectionObserver: far cheaper
+   than a JS animation per element, and works with pre-rendered HTML. */
+.reveal,
+.reveal-group > .reveal-item {
+  opacity: 0;
+  transform: translateY(var(--reveal-y, 24px));
+  transition:
+    opacity 0.8s var(--ease-out-expo),
+    transform 0.8s var(--ease-out-expo);
+  transition-delay: var(--reveal-delay, 0s);
+}
+.reveal-group > .reveal-item {
+  transition-delay: calc(var(--reveal-delay, 0s) + var(--reveal-i, 0) * var(--reveal-stagger, 0.08s));
+}
+.reveal[data-revealed],
+.reveal-group[data-revealed] > .reveal-item {
+  opacity: 1;
+  transform: none;
+}
+/* ── Scroll-driven progress (no JavaScript, no forced layouts) ─────
+   Browsers without scroll timelines show the timeline line fully drawn and
+   simply omit the page-progress bar. */
+@keyframes grow-x {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+@keyframes grow-y {
+  from { transform: scaleY(0); }
+  to { transform: scaleY(1); }
+}
+.scroll-progress {
+  display: none;
+  transform-origin: left;
+}
+@supports (animation-timeline: scroll()) {
+  .scroll-progress {
+    display: block;
+    animation: grow-x linear both;
+    animation-timeline: scroll(root block);
+  }
+  .timeline-progress {
+    transform-origin: top;
+    animation: grow-y linear both;
+    animation-timeline: view();
+    animation-range: entry 15% exit 65%;
+  }
+}
+
+/* Faces of the static isometric hero chart (StaticHeroVisual). --m = accent mix per bar. */
+.iso-l { fill: color-mix(in oklab, var(--accent) calc(var(--m) * 0.45), var(--surface-2)); }
+.iso-r { fill: color-mix(in oklab, var(--accent) calc(var(--m) * 0.65), var(--surface)); }
+.iso-t {
+  fill: color-mix(in oklab, var(--accent) var(--m), var(--surface-2));
+  stroke: var(--line-strong);
+  stroke-width: 0.5;
+}
+
+/* Skill proficiency bars grow once their card is revealed. */
+.skill-fill {
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 1.2s var(--ease-out-expo) var(--fill-delay, 0s);
+}
+[data-revealed] .skill-fill {
+  transform: scaleX(1);
+}
+
+/* ── Custom utilities ─
+/* bg-grid, mask-radial and glow are reserved for the hero: no other section uses
+   background gradients or patterns (brand rule). */────────────────────────────────────────── */
+@utility bg-grid {
+  background-image:
+    linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
+  background-size: 56px 56px;
+}
+
+
+
+@utility mask-radial {
+  mask-image: radial-gradient(ellipse at center, black 30%, transparent 75%);
+}
+
+@utility skeleton {
+  background-color: var(--surface-2);
+  animation: var(--animate-skeleton);
+}
+
+@utility tabular {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Hero-only accent glow. A radial gradient, not `filter: blur()`, which is very expensive to paint. */
+@utility glow {
+  background: radial-gradient(closest-side, var(--accent-glow), transparent);
+}
+
+/* ── Base ─────────────────────────────────────────────────────── */
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+    text-rendering: optimizeLegibility;
+    scroll-padding-top: 5.5rem;
+  }
+
+  body {
+    @apply bg-bg font-sans text-fg antialiased;
+    overflow-x: clip;
+  }
+
+  h1, h2, h3, h4 {
+    @apply font-display tracking-tight text-balance;
+  }
+
+  ::selection {
+    background: var(--accent);
+    color: var(--accent-fg);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+    border-radius: 6px;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
