@@ -1,4 +1,4 @@
-# Toochukwu — Data Analyst Portfolio
+# John Tochukwu Emmanuel — Data Analyst Portfolio
 
 > *"I turn messy data into clear business decisions."*
 
@@ -120,7 +120,7 @@ The sitemap updates automatically on the next build.
 
 ### CV, Open Graph image, favicon
 
-- Replace `public/cv/Toochukwu-Data-Analyst-CV.pdf` (or change `profile.cvUrl`).
+- Replace `public/cv/John-Tochukwu-Emmanuel-Data-Analyst-CV.pdf` (or change `profile.cvUrl`).
 - Edit `NAME`, `TAGLINE` and `URL_TEXT` at the top of `scripts/generate-assets.mjs`, then run `npm run assets` to regenerate the OG image and icons. Real photos/CVs are never overwritten unless you pass `--force`.
 
 ### Colours, fonts, theme
@@ -186,7 +186,7 @@ These keys are public by design (they ship to the browser). Restrict them to you
 
 1. Push the project to GitHub/GitLab/Bitbucket.
 2. In Vercel: **Add New → Project**, then import the repo. The Vite framework preset is detected (`vercel.json` also sets `npm run build` → `dist`).
-3. **Settings → Environment Variables**: add `VITE_SITE_URL` (your final URL, e.g. `https://toochukwu.dev`) plus your form provider keys (and `VITE_API_BASE_URL` if used).
+3. **Settings → Environment Variables**: add `VITE_SITE_URL` (your final URL, e.g. `https://tochukwu.dev`) plus your form provider keys (and `VITE_API_BASE_URL` if used).
 4. Deploy. Redeploy after changing env vars; they're baked in at build time.
 5. Custom domain: **Settings → Domains**. Then update `VITE_SITE_URL` and redeploy so canonical URLs, OG tags and the sitemap use it.
 6. Submit `https://<your-domain>/sitemap.xml` in Google Search Console.

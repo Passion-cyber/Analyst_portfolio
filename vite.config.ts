@@ -79,7 +79,7 @@ function seoPlugin(siteUrl: string): Plugin {
 
 export default defineConfig(({ mode, isSsrBuild }) => {
   const env = loadEnv(mode, process.cwd(), '')
-  const siteUrl = (env.VITE_SITE_URL || 'https://toochukwu.vercel.app').replace(/\/$/, '')
+  const siteUrl = (env.VITE_SITE_URL || 'https://tochukwu.vercel.app').replace(/\/$/, '')
 
   return {
     // The SSR build (used only for pre-rendering) needs neither the HTML/SEO plugin nor chunking.

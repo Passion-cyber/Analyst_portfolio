@@ -6,14 +6,14 @@ import type { HeroKpi, NavLink, Profile } from '@/types/content'
  * <head> meta tags and the Person structured data (JSON-LD).
  */
 export const profile: Profile = {
-  name: 'Toochukwu', // ✏️ add surname, e.g. 'Toochukwu Okafor'
-  firstName: 'Toochukwu',
+  name: 'John Tochukwu Emmanuel',
+  firstName: 'Tochukwu',
   role: 'Data Analyst',
   headline: 'I turn *messy data* into clear business decisions.',
   valueProposition:
     'Dashboards, SQL analysis and predictive models that show leaders exactly where the money is made, lost and waiting.',
   seoDescription:
-    'Toochukwu is a Data Analyst who turns messy data into clear business decisions with Power BI, Tableau, SQL and Python. View case studies and hire him for your next project.',
+    'John Tochukwu Emmanuel is a Data Analyst who turns messy data into clear business decisions with Power BI, Tableau, SQL and Python. View case studies and hire him for your next project.',
   location: 'Lagos, Nigeria · Remote worldwide', // ✏️
   availability: 'Available for freelance & full-time roles', // ✏️
   bio: [
@@ -23,20 +23,19 @@ export const profile: Profile = {
     "When I'm not modelling, I mentor early-career analysts and write about practical analytics for growing businesses.",
   ],
   photo: {
-    // ✏️ Drop your photo in public/images/raw and run `npm run images` (see README)
     avif: '/images/portrait.avif',
     webp: '/images/portrait.webp',
     src: '/images/portrait.jpg',
-    alt: 'Portrait of Toochukwu, Data Analyst',
-    width: 800,
-    height: 1000,
+    alt: 'Portrait of John Tochukwu Emmanuel, Data Analyst',
+    width: 470,
+    height: 587,
   },
-  cvUrl: '/cv/Toochukwu-Data-Analyst-CV.pdf', // ✏️ replace the PDF in public/cv
-  email: 'hello@toochukwu.dev', // ✏️
-  whatsapp: '2348000000000', // ✏️ digits only, with country code
+  cvUrl: '/cv/John-Tochukwu-Emmanuel-Data-Analyst-CV.pdf',
+  email: 'tochukwujohn14@gmail.com',
+  whatsapp: '2347061552180', // digits only, with country code
   socials: {
-    linkedin: 'https://www.linkedin.com/in/toochukwu', // ✏️
-    github: 'https://github.com/toochukwu', // ✏️
+    linkedin: 'https://www.linkedin.com/in/john-tochukwu-76230519b',
+    github: 'https://github.com/Emifresh1',
   },
   knowsAbout: [
     'Data Analysis',
