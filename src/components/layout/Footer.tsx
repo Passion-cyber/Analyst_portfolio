@@ -24,7 +24,7 @@ export function Footer() {
           <div className="max-w-sm">
             <Logo />
             <p className="mt-5 leading-relaxed text-muted">
-              Turning messy data into clear business decisions. Dashboards, SQL analysis and predictive models for teams
+              Turning messy data into clear business decisions. Dashboards, SQL analysis and clean, trusted data for teams
               that want answers, not more spreadsheets.
             </p>
             <p className="mt-6 inline-flex items-center gap-2 rounded-full border border-line px-3 py-1.5 text-sm text-muted">

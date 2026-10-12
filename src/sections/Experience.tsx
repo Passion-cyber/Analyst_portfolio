@@ -17,13 +17,13 @@ const kindMeta: Record<TimelineKind, { label: string; icon: typeof Briefcase }> 
 function TimelineItem({ entry }: { entry: TimelineEntry }) {
   const { icon: KindIcon, label } = kindMeta[entry.kind]
   const current = entry.kind === 'role' && !entry.end
-  const period = entry.end ? `${entry.start} — ${entry.end}` : entry.kind === 'role' ? `${entry.start} — Present` : entry.start
+  const period = !entry.start ? undefined : entry.end ? `${entry.start} — ${entry.end}` : entry.kind === 'role' ? `${entry.start} — Present` : entry.start
 
   return (
     <Reveal as="li" className="relative grid gap-3 pl-12 md:grid-cols-[11rem_1fr] md:gap-10 md:pl-0">
       {/* Date column (desktop) */}
       <div className="hidden pt-5 text-right md:block">
-        <p className="font-mono text-sm text-fg tabular">{period}</p>
+        {period && <p className="font-mono text-sm text-fg tabular">{period}</p>}
         {entry.location && <p className="mt-1 text-sm text-subtle">{entry.location}</p>}
       </div>
 
@@ -48,7 +48,7 @@ function TimelineItem({ entry }: { entry: TimelineEntry }) {
               <span className="size-1.5 animate-pulse-dot rounded-full bg-accent" aria-hidden="true" /> Current
             </span>
           )}
-          <span className="font-mono text-xs text-subtle md:hidden">{period}</span>
+          {period && <span className="font-mono text-xs text-subtle md:hidden">{period}</span>}
         </div>
         <h3 className="mt-3 text-xl font-semibold">{entry.title}</h3>
         <p className="mt-1 text-muted">
@@ -113,7 +113,7 @@ export function Experience() {
           />
           <ol className="relative space-y-8 md:space-y-10">
             {timeline?.map((entry) => (
-              <TimelineItem key={`${entry.title}-${entry.start}`} entry={entry} />
+              <TimelineItem key={`${entry.title}-${entry.organization}`} entry={entry} />
             ))}
           </ol>
         </div>
