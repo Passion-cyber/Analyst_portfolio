@@ -130,8 +130,6 @@ export function Navbar() {
             </button>
           </div>
         </nav>
-        {/* Page progress: CSS scroll-driven animation (.scroll-progress in index.css). */}
-        <div aria-hidden="true" className="scroll-progress h-px bg-accent/80" />
       </div>
 
       <AnimatePresence>
