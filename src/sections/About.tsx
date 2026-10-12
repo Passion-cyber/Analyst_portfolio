@@ -7,12 +7,12 @@ import { ResponsiveImage } from '@/components/ui/ResponsiveImage'
 import { Reveal } from '@/components/ui/Reveal'
 import { Section, SectionHeading } from '@/components/ui/Section'
 
-const years = stats.find((s) => /year/i.test(s.label))
+const highlight = stats[0]
 
 const facts = [
   { icon: MapPin, label: 'Based in', value: profile.location },
   { icon: Briefcase, label: 'Status', value: profile.availability },
-  { icon: Target, label: 'Focus', value: 'Revenue, retention & operational efficiency' },
+  { icon: Target, label: 'Focus', value: 'KPIs, reporting & operational efficiency' },
 ]
 
 export function About() {
@@ -29,10 +29,9 @@ export function About() {
           <span aria-hidden="true" className="absolute -right-3 -bottom-3 size-10 rounded-br-2xl border-r-2 border-b-2 border-accent" />
           <div className="absolute -right-4 bottom-10 rounded-2xl border border-line-strong bg-surface/90 px-4 py-3 shadow-card backdrop-blur-xl sm:-right-8">
             <p className="font-mono text-3xl font-semibold text-accent tabular">
-              {years ? `${years.value}${years.suffix ?? ''}` : '—'}
+              {highlight ? `${highlight.value}${highlight.suffix ?? ''}` : '—'}
             </p>
-            <p className="text-xs text-muted">years turning data
-              <br />into decisions</p>
+            <p className="text-xs text-muted">{highlight?.label.toLowerCase()}</p>
           </div>
         </Reveal>
 

@@ -1,60 +1,60 @@
 import type { IconName, SkillGroup } from '@/types/content'
 
 /**
- * ✏️ PLACEHOLDER CONTENT — skills grouped by category.
+ * Skills grouped by category, from the CV.
  * `level` is 0–100 and drives the proficiency bar. Be honest; recruiters probe.
  */
 export const skillGroups: SkillGroup[] = [
   {
-    category: 'Programming & Querying',
+    category: 'Data Analysis Tools',
     icon: 'database',
-    description: 'Extracting, joining and reshaping data at any scale.',
+    description: 'Collecting, cleaning and querying data to answer business questions.',
     skills: [
-      { name: 'SQL (PostgreSQL, MySQL, BigQuery)', level: 92, icon: 'sql' },
-      { name: 'Python', level: 85, icon: 'python' },
-      { name: 'Pandas & NumPy', level: 88, icon: 'pandas' },
+      { name: 'Excel & Power Query', level: 88, icon: 'excel' },
+      { name: 'SQL', level: 80, icon: 'sql' },
+      { name: 'Python', level: 60, icon: 'python' },
     ],
   },
   {
-    category: 'Business Intelligence',
+    category: 'Data Visualization',
     icon: 'dashboard',
-    description: 'Dashboards decision-makers actually open on Monday morning.',
+    description: 'Dashboards and charts that make KPIs easy to track.',
     skills: [
-      { name: 'Power BI & DAX', level: 93, icon: 'powerbi' },
-      { name: 'Tableau', level: 84, icon: 'tableau' },
-      { name: 'Excel & Power Query', level: 95, icon: 'excel' },
+      { name: 'Power BI dashboards', level: 85, icon: 'powerbi' },
+      { name: 'Excel charts', level: 85, icon: 'visualization' },
+      { name: 'Dashboard development', level: 80, icon: 'dashboard' },
     ],
   },
   {
-    category: 'Statistics & Modelling',
+    category: 'Databases & Programming',
+    icon: 'workflow',
+    description: 'Storing, structuring and presenting data.',
+    skills: [
+      { name: 'MySQL', level: 75, icon: 'database' },
+      { name: 'PostgreSQL', level: 70, icon: 'database' },
+      { name: 'HTML & CSS', level: 65, icon: 'workflow' },
+    ],
+  },
+  {
+    category: 'Analysis & Problem Solving',
     icon: 'statistics',
-    description: 'Separating real signal from noise before money moves.',
+    description: 'Finding the trend, the inefficiency and the next step.',
     skills: [
-      { name: 'Statistical testing (A/B, regression)', level: 82, icon: 'statistics' },
-      { name: 'Machine learning (scikit-learn, XGBoost)', level: 76, icon: 'machine-learning' },
-      { name: 'Forecasting & time series', level: 74, icon: 'prediction' },
-    ],
-  },
-  {
-    category: 'Visualization & Storytelling',
-    icon: 'visualization',
-    description: 'Turning findings into a story a CFO can repeat.',
-    skills: [
-      { name: 'Data visualization design', level: 90, icon: 'visualization' },
-      { name: 'Executive reporting', level: 88, icon: 'reporting' },
-      { name: 'Data cleaning & validation', level: 94, icon: 'cleaning' },
+      { name: 'Data cleaning & validation', level: 85, icon: 'cleaning' },
+      { name: 'Statistical analysis', level: 70, icon: 'statistics' },
+      { name: 'Process optimisation', level: 75, icon: 'reporting' },
     ],
   },
 ]
 
 /** Tools that orbit the skills visual. Order controls position on the rings. */
 export const orbitTools: { name: string; icon: IconName }[] = [
-  { name: 'Python', icon: 'python' },
+  { name: 'Excel', icon: 'excel' },
   { name: 'SQL', icon: 'sql' },
   { name: 'Power BI', icon: 'powerbi' },
-  { name: 'Tableau', icon: 'tableau' },
-  { name: 'Excel', icon: 'excel' },
-  { name: 'Pandas', icon: 'pandas' },
+  { name: 'Python', icon: 'python' },
+  { name: 'Power Query', icon: 'workflow' },
+  { name: 'PostgreSQL', icon: 'database' },
   { name: 'Statistics', icon: 'statistics' },
   { name: 'Dataviz', icon: 'visualization' },
 ]

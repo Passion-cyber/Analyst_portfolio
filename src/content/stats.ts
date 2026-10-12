@@ -1,9 +1,9 @@
 import type { Stat } from '@/types/content'
 
-/** ✏️ PLACEHOLDER CONTENT — headline numbers shown under the hero. */
+/** Headline numbers shown under the hero, taken from the CV. */
 export const stats: Stat[] = [
-  { label: 'Projects delivered', value: 42, suffix: '+', description: 'End-to-end analytics engagements' },
-  { label: 'Datasets analyzed', value: 120, suffix: '+', description: 'From 5K-row sheets to 40M-row tables' },
-  { label: 'Dashboards built', value: 35, description: 'Power BI, Tableau & Looker Studio' },
-  { label: 'Years of experience', value: 4, suffix: '+', description: 'Retail, fintech, health & NGOs' },
+  { label: 'Data projects built', value: 15, description: '10 Power BI dashboards and 5 Excel reports' },
+  { label: 'Power BI dashboards', value: 10, description: 'KPI tracking and business intelligence' },
+  { label: 'Certifications', value: 3, description: 'Data analysis, SQL and Excel' },
+  { label: 'Months as analyst intern', value: 6, description: 'Quantum Analytics, Lagos' },
 ]

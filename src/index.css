@@ -141,27 +141,13 @@
   opacity: 1;
   transform: none;
 }
-/* ── Scroll-driven progress (no JavaScript, no forced layouts) ─────
-   Browsers without scroll timelines show the timeline line fully drawn and
-   simply omit the page-progress bar. */
-@keyframes grow-x {
-  from { transform: scaleX(0); }
-  to { transform: scaleX(1); }
-}
+/* ── Scroll-driven timeline line (no JavaScript, no forced layouts) ─────
+   Browsers without scroll timelines show the timeline line fully drawn. */
 @keyframes grow-y {
   from { transform: scaleY(0); }
   to { transform: scaleY(1); }
 }
-.scroll-progress {
-  display: none;
-  transform-origin: left;
-}
 @supports (animation-timeline: scroll()) {
-  .scroll-progress {
-    display: block;
-    animation: grow-x linear both;
-    animation-timeline: scroll(root block);
-  }
   .timeline-progress {
     transform-origin: top;
     animation: grow-y linear both;
