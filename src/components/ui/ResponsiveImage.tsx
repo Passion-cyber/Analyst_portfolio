@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import type { ResponsiveImageSource } from '@/types/content'
 import { cn } from '@/lib/cn'
 
@@ -17,11 +17,17 @@ interface ResponsiveImageProps {
  */
 export function ResponsiveImage({ image, className, imgClassName, priority = false, sizes = '100vw' }: ResponsiveImageProps) {
   const [loaded, setLoaded] = useState(false)
+  const ref = useRef<HTMLImageElement>(null)
+  // A pre-rendered image can finish loading before hydration attaches onLoad
+  useEffect(() => {
+    if (ref.current?.complete && ref.current.naturalWidth > 0) setLoaded(true)
+  }, [])
   return (
     <picture className={cn('block', className)}>
       {image.avif && <source srcSet={image.avif} type="image/avif" sizes={sizes} />}
       {image.webp && <source srcSet={image.webp} type="image/webp" sizes={sizes} />}
       <img
+        ref={ref}
         src={image.src}
         alt={image.alt}
         width={image.width}
