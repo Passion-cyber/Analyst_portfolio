@@ -7,7 +7,7 @@ export const testimonials: Testimonial[] = [
     role: 'Head of Operations',
     company: 'Northwind Retail Group',
     quote:
-      'Toochukwu took fourteen spreadsheets nobody trusted and gave us one dashboard the whole leadership team now opens every Monday. We found inventory problems in week two that had been hiding for a year.',
+      'Tochukwu took fourteen spreadsheets nobody trusted and gave us one dashboard the whole leadership team now opens every Monday. We found inventory problems in week two that had been hiding for a year.',
   },
   {
     name: 'Daniel Mensah',
@@ -21,7 +21,7 @@ export const testimonials: Testimonial[] = [
     role: 'Programme Director',
     company: 'HealthBridge NGO',
     quote:
-      'Our survey data used to take a week to clean every month. Toochukwu automated the whole thing, documented it, and trained our team so we are no longer dependent on anyone.',
+      'Our survey data used to take a week to clean every month. Tochukwu automated the whole thing, documented it, and trained our team so we are no longer dependent on anyone.',
   },
   {
     name: 'Michael Adeyemi',

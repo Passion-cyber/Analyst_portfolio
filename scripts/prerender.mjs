@@ -20,7 +20,7 @@ const dist = join(root, 'dist')
 const ssrDir = join(root, 'dist-ssr')
 
 const env = loadEnv('production', root, '')
-const siteUrl = (env.VITE_SITE_URL || 'https://toochukwu.vercel.app').replace(/\/+$/, '')
+const siteUrl = (env.VITE_SITE_URL || 'https://tochukwu.vercel.app').replace(/\/+$/, '')
 
 const { render, getPrerenderRoutes } = await import(pathToFileURL(join(ssrDir, 'entry-server.js')).href)
 

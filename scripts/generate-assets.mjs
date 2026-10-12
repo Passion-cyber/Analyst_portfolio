@@ -17,10 +17,11 @@ const root = join(dirname(fileURLToPath(import.meta.url)), '..')
 const pub = (...p) => join(root, 'public', ...p)
 const force = process.argv.includes('--force')
 
-const NAME = 'Toochukwu' // ✏️
+const NAME = 'John Tochukwu Emmanuel'
+const SHORT_NAME = 'Tochukwu'
 const ROLE = 'Data Analyst'
 const TAGLINE = 'I turn messy data into clear business decisions.'
-const URL_TEXT = 'toochukwu.vercel.app' // ✏️
+const URL_TEXT = 'tochukwu.vercel.app' // ✏️
 const CV_FILE = 'John-Tochukwu-Emmanuel-Data-Analyst-CV.pdf'
 
 const BG = '#050b1f'
@@ -55,7 +56,7 @@ write(
   JSON.stringify(
     {
       name: `${NAME} · ${ROLE}`,
-      short_name: NAME,
+      short_name: SHORT_NAME,
       icons: [
         { src: '/icon-192.png', sizes: '192x192', type: 'image/png' },
         { src: '/icon-512.png', sizes: '512x512', type: 'image/png' },

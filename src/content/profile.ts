@@ -6,14 +6,14 @@ import type { HeroKpi, NavLink, Profile } from '@/types/content'
  * <head> meta tags and the Person structured data (JSON-LD).
  */
 export const profile: Profile = {
-  name: 'Toochukwu', // ✏️ add surname, e.g. 'Toochukwu Okafor'
-  firstName: 'Toochukwu',
+  name: 'John Tochukwu Emmanuel',
+  firstName: 'Tochukwu',
   role: 'Data Analyst',
   headline: 'I turn *messy data* into clear business decisions.',
   valueProposition:
     'Dashboards, SQL analysis and predictive models that show leaders exactly where the money is made, lost and waiting.',
   seoDescription:
-    'Toochukwu is a Data Analyst who turns messy data into clear business decisions with Power BI, Tableau, SQL and Python. View case studies and hire him for your next project.',
+    'John Tochukwu Emmanuel is a Data Analyst who turns messy data into clear business decisions with Power BI, Tableau, SQL and Python. View case studies and hire him for your next project.',
   location: 'Lagos, Nigeria · Remote worldwide', // ✏️
   availability: 'Available for freelance & full-time roles', // ✏️
   bio: [
@@ -26,7 +26,7 @@ export const profile: Profile = {
     avif: '/images/portrait.avif',
     webp: '/images/portrait.webp',
     src: '/images/portrait.jpg',
-    alt: 'Portrait of Toochukwu, Data Analyst',
+    alt: 'Portrait of John Tochukwu Emmanuel, Data Analyst',
     width: 470,
     height: 587,
   },

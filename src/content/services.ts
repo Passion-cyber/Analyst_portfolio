@@ -1,6 +1,6 @@
 import type { Service } from '@/types/content'
 
-/** ✏️ PLACEHOLDER CONTENT — what clients can hire Toochukwu for. */
+/** ✏️ PLACEHOLDER CONTENT — what clients can hire Tochukwu for. */
 export const services: Service[] = [
   {
     title: 'Dashboard Development',
