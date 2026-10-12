@@ -23,13 +23,12 @@ export const profile: Profile = {
     "When I'm not modelling, I mentor early-career analysts and write about practical analytics for growing businesses.",
   ],
   photo: {
-    // ✏️ Drop your photo in public/images/raw and run `npm run images` (see README)
     avif: '/images/portrait.avif',
     webp: '/images/portrait.webp',
     src: '/images/portrait.jpg',
     alt: 'Portrait of Toochukwu, Data Analyst',
-    width: 800,
-    height: 1000,
+    width: 470,
+    height: 587,
   },
   cvUrl: '/cv/John-Tochukwu-Emmanuel-Data-Analyst-CV.pdf',
   email: 'tochukwujohn14@gmail.com',
