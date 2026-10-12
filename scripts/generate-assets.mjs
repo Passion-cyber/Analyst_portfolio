@@ -21,7 +21,7 @@ const NAME = 'Toochukwu' // ✏️
 const ROLE = 'Data Analyst'
 const TAGLINE = 'I turn messy data into clear business decisions.'
 const URL_TEXT = 'toochukwu.vercel.app' // ✏️
-const CV_FILE = 'Toochukwu-Data-Analyst-CV.pdf'
+const CV_FILE = 'John-Tochukwu-Emmanuel-Data-Analyst-CV.pdf'
 
 const BG = '#050b1f'
 const ACCENT = '#4f8cff'

@@ -31,12 +31,12 @@ export const profile: Profile = {
     width: 800,
     height: 1000,
   },
-  cvUrl: '/cv/Toochukwu-Data-Analyst-CV.pdf', // ✏️ replace the PDF in public/cv
-  email: 'hello@toochukwu.dev', // ✏️
-  whatsapp: '2348000000000', // ✏️ digits only, with country code
+  cvUrl: '/cv/John-Tochukwu-Emmanuel-Data-Analyst-CV.pdf',
+  email: 'tochukwujohn14@gmail.com',
+  whatsapp: '2347061552180', // digits only, with country code
   socials: {
-    linkedin: 'https://www.linkedin.com/in/toochukwu', // ✏️
-    github: 'https://github.com/toochukwu', // ✏️
+    linkedin: 'https://www.linkedin.com/in/john-tochukwu-76230519b',
+    github: 'https://github.com/Emifresh1',
   },
   knowsAbout: [
     'Data Analysis',

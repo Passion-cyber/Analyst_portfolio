@@ -120,7 +120,7 @@ The sitemap updates automatically on the next build.
 
 ### CV, Open Graph image, favicon
 
-- Replace `public/cv/Toochukwu-Data-Analyst-CV.pdf` (or change `profile.cvUrl`).
+- Replace `public/cv/John-Tochukwu-Emmanuel-Data-Analyst-CV.pdf` (or change `profile.cvUrl`).
 - Edit `NAME`, `TAGLINE` and `URL_TEXT` at the top of `scripts/generate-assets.mjs`, then run `npm run assets` to regenerate the OG image and icons. Real photos/CVs are never overwritten unless you pass `--force`.
 
 ### Colours, fonts, theme

@@ -24,10 +24,7 @@ export const projects: Project[] = [
     tools: ['Power BI', 'DAX', 'SQL Server', 'Power Query'],
     keyMetric: { value: '11 hrs', label: 'reporting time saved per week' },
     featured: true,
-    links: {
-      github: 'https://github.com/toochukwu/retail-sales-command-center', // ✏️
-      live: 'https://app.powerbi.com/', // ✏️ public embed link
-    },
+    links: {},
     caseStudy: {
       problem:
         'Leadership received 14 different Excel reports every Monday, each built by hand from a different extract. Numbers rarely matched, so meetings were spent debating data instead of decisions, and margin leaks went unnoticed for months.',
@@ -94,9 +91,7 @@ export const projects: Project[] = [
     tools: ['Python', 'Pandas', 'scikit-learn', 'XGBoost', 'SHAP', 'Power BI'],
     keyMetric: { value: '−17%', label: 'monthly churn after rollout' },
     featured: true,
-    links: {
-      github: 'https://github.com/toochukwu/churn-early-warning', // ✏️
-    },
+    links: {},
     caseStudy: {
       problem:
         'The customer experience team only learned a customer had left after they stopped transacting. Retention offers were sent to everyone, wasting budget on customers who were never going to leave.',
@@ -163,9 +158,7 @@ export const projects: Project[] = [
     tools: ['PostgreSQL', 'SQL window functions', 'dbt', 'Excel'],
     keyMetric: { value: '$420K', label: 'excess inventory identified' },
     featured: true,
-    links: {
-      github: 'https://github.com/toochukwu/supplier-sql-audit', // ✏️
-    },
+    links: {},
     caseStudy: {
       problem:
         'Warehouses were full yet stores reported stock-outs. Purchasing decisions were made on gut feel and nobody could say which suppliers were reliably late.',
@@ -226,9 +219,7 @@ export const projects: Project[] = [
     tools: ['Python', 'Pandas', 'RapidFuzz', 'Great Expectations', 'Excel'],
     keyMetric: { value: '98.6%', label: 'record accuracy (from 71%)' },
     featured: true,
-    links: {
-      github: 'https://github.com/toochukwu/patient-records-cleaning', // ✏️
-    },
+    links: {},
     caseStudy: {
       problem:
         'Field clinics captured patient data on paper and in four different spreadsheet templates. Duplicate patients, invalid dates and inconsistent facility names made programme reporting unreliable for donors.',
@@ -287,9 +278,7 @@ export const projects: Project[] = [
     duration: '12 weeks',
     tools: ['Python', 'scikit-learn', 'LightGBM', 'SQL', 'Tableau'],
     keyMetric: { value: '−22%', label: '90-day default rate' },
-    links: {
-      github: 'https://github.com/toochukwu/loan-default-scoring', // ✏️
-    },
+    links: {},
     caseStudy: {
       problem:
         'The lender approved loans with a rules-based checklist. Defaults were rising, but tightening the rules would have rejected many good borrowers.',
@@ -349,9 +338,7 @@ export const projects: Project[] = [
     duration: '3 weeks',
     tools: ['Tableau', 'BigQuery', 'SQL', 'Supermetrics'],
     keyMetric: { value: '3.4×', label: 'blended ROAS (from 2.1×)' },
-    links: {
-      live: 'https://public.tableau.com/', // ✏️
-    },
+    links: {},
     caseStudy: {
       problem:
         'Each ad platform claimed credit for the same sales, so the founder could not tell which channel actually made money and kept scaling the wrong one.',
@@ -406,9 +393,7 @@ export const projects: Project[] = [
     duration: '2 weeks',
     tools: ['BigQuery', 'SQL', 'Looker Studio', 'Python'],
     keyMetric: { value: '+9 pts', label: '90-day repeat purchase rate' },
-    links: {
-      github: 'https://github.com/toochukwu/cohort-retention-sql', // ✏️
-    },
+    links: {},
     caseStudy: {
       problem:
         'Customer acquisition costs were rising and the team did not know whether new customers came back, or which products created repeat buyers.',
@@ -466,9 +451,7 @@ export const projects: Project[] = [
     duration: '5 weeks',
     tools: ['Excel', 'Power Query', 'Python', 'KoboToolbox'],
     keyMetric: { value: '40 → 2 hrs', label: 'monthly processing time' },
-    links: {
-      github: 'https://github.com/toochukwu/survey-pipeline', // ✏️
-    },
+    links: {},
     caseStudy: {
       problem:
         'Monthly household surveys arrived from 120 enumerators in slightly different formats. Two staff spent a full week every month cleaning them by hand before any analysis could start.',
