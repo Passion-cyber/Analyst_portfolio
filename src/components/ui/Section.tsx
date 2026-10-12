@@ -28,7 +28,7 @@ interface SectionHeadingProps {
   id: string
   index: string
   eyebrow: string
-  title: ReactNode
+  title?: ReactNode
   description?: ReactNode
   align?: 'left' | 'center'
   className?: string

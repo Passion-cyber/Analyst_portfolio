@@ -181,8 +181,8 @@ export interface TimelineEntry {
   kind: TimelineKind
   title: string
   organization: string
-  /** Free text so you can write "Jan 2023" or "2021". */
-  start: string
+  /** Free text so you can write "Jan 2023" or "2021". Omit when undated. */
+  start?: string
   /** Omit for current roles. */
   end?: string
   location?: string
