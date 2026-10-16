@@ -3,11 +3,8 @@ import {
   ArrowDown,
   ArrowRight,
   MapPin,
-  TrendingDown,
-  TrendingUp,
 } from "lucide-react";
-import { /*heroKpis,*/ profile } from "@/content/profile";
-import type { HeroKpi } from "@/types/content";
+import { profile } from "@/content/profile";
 import { cn } from "@/lib/cn";
 import { Button } from "@/components/ui/Button";
 import { Magnetic } from "@/components/ui/Magnetic";
@@ -62,44 +59,6 @@ function Headline() {
   );
 }
 
-/** Small glass KPI cards floating over the 3D chart — reinforce the "dashboard" story. */
-function KpiCard({
-  kpi,
-  className,
-  startDelay,
-}: {
-  kpi: HeroKpi;
-  className: string;
-  startDelay: number;
-}) {
-  const TrendIcon = kpi.trend === "up" ? TrendingUp : TrendingDown;
-  return (
-    <div
-      aria-hidden="true"
-      className={cn("absolute hidden animate-fade-up sm:block", className)}
-      style={delay(startDelay)}
-    >
-      <div
-        className="animate-float rounded-2xl border border-line-strong bg-surface/80 px-4 py-3 shadow-card backdrop-blur-xl"
-        style={delay(startDelay)}
-      >
-        <p className="font-mono text-[0.65rem] tracking-[0.18em] text-subtle uppercase">
-          {kpi.label}
-        </p>
-        <p className="mt-1 flex items-center gap-2 font-mono text-xl font-semibold text-fg tabular">
-          {kpi.value}
-          <TrendIcon className="size-4 text-accent" />
-        </p>
-      </div>
-    </div>
-  );
-}
-
-const kpiPositions = [
-  "top-[12%] left-[2%] lg:left-[4%]",
-  "right-[4%] bottom-[16%] lg:right-[12%]",
-];
-
 export function Hero() {
   return (
     <section
@@ -107,17 +66,15 @@ export function Hero() {
       aria-labelledby="hero-title"
       className="relative isolate overflow-hidden pt-24 sm:pt-28 lg:min-h-[100svh]"
     >
-      {/* Background: dashboard grid + accent glows */}
+      {/* Background: dashboard grid on a clean, solid theme background */}
       <div aria-hidden="true" className="absolute inset-0 -z-10">
         <div className="absolute inset-0 bg-grid mask-radial opacity-80" />
-        <div className="glow absolute -top-64 right-[-20%] size-[56rem]" />
-        <div className="absolute bottom-[-30%] left-[-25%] size-[44rem] bg-[radial-gradient(closest-side,rgb(67_56_202/0.14),transparent)]" />
         <div className="absolute inset-x-0 bottom-0 h-40 bg-linear-to-b from-transparent to-bg" />
       </div>
 
       <Container className="grid items-center gap-6 lg:min-h-[calc(100svh-7rem)] lg:grid-cols-[1.05fr_1fr] lg:gap-4">
         <div className="relative z-10 max-w-2xl py-6 lg:py-16">
-          {/* <p className="mb-7 inline-flex animate-fade-up flex-wrap items-center gap-x-3 gap-y-1 rounded-full border border-line bg-surface/60 py-1.5 pr-4 pl-2 text-sm text-muted backdrop-blur">
+          <p className="mb-7 inline-flex animate-fade-up flex-wrap items-center gap-x-3 gap-y-1 rounded-full border border-line bg-surface/60 py-1.5 pr-4 pl-2 text-sm text-muted backdrop-blur">
             <span className="inline-flex items-center gap-2 rounded-full bg-accent/12 px-2.5 py-0.5 font-medium text-accent">
               <span className="size-1.5 animate-pulse-dot rounded-full bg-accent" aria-hidden="true" />
               {profile.role}
@@ -125,7 +82,7 @@ export function Hero() {
             <span>
               Hi, I'm <span className="text-fg">{profile.name}</span>
             </span>
-          </p> */}
+          </p>
 
           <Headline />
 
@@ -175,14 +132,6 @@ export function Hero() {
 
         <div className="relative -mx-4 h-[340px] sm:mx-0 sm:h-[460px] lg:-mr-16 lg:h-[640px]">
           <HeroVisual />
-          {/* {heroKpis.slice(0, kpiPositions.length).map((kpi, i) => (
-            <KpiCard
-              key={kpi.label}
-              kpi={kpi}
-              className={kpiPositions[i]}
-              startDelay={1 + i * 0.2}
-            />
-          ))} */}
         </div>
       </Container>
 

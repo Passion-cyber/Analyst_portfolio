@@ -1,7 +1,7 @@
 import type { IconName } from '@/types/content'
 import { cn } from '@/lib/cn'
 import { Icon } from './Icon'
-import { LogoMark } from '@/components/layout/Logo'
+// import { LogoMark } from '@/components/layout/Logo'
 
 interface ToolOrbitProps {
   tools: { name: string; icon: IconName }[]
@@ -28,7 +28,7 @@ export function ToolOrbit({ tools, className }: ToolOrbitProps) {
 
       <div aria-hidden="true" className="absolute inset-[39%] grid place-items-center rounded-full border border-line-strong bg-surface shadow-card">
         <div className="absolute inset-0 animate-pulse-dot rounded-full" />
-        <LogoMark className="size-9 sm:size-11" />
+        {/* <LogoMark className="size-9 sm:size-11" /> */}
       </div>
     </div>
   )
