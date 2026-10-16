@@ -3,11 +3,8 @@ import {
   ArrowDown,
   ArrowRight,
   MapPin,
-  TrendingDown,
-  TrendingUp,
 } from "lucide-react";
-import { /*heroKpis,*/ profile } from "@/content/profile";
-import type { HeroKpi } from "@/types/content";
+import { profile } from "@/content/profile";
 import { cn } from "@/lib/cn";
 import { Button } from "@/components/ui/Button";
 import { Magnetic } from "@/components/ui/Magnetic";
@@ -61,44 +58,6 @@ function Headline() {
     </h1>
   );
 }
-
-/** Small glass KPI cards floating over the 3D chart — reinforce the "dashboard" story. */
-function KpiCard({
-  kpi,
-  className,
-  startDelay,
-}: {
-  kpi: HeroKpi;
-  className: string;
-  startDelay: number;
-}) {
-  const TrendIcon = kpi.trend === "up" ? TrendingUp : TrendingDown;
-  return (
-    <div
-      aria-hidden="true"
-      className={cn("absolute hidden animate-fade-up sm:block", className)}
-      style={delay(startDelay)}
-    >
-      <div
-        className="animate-float rounded-2xl border border-line-strong bg-surface/80 px-4 py-3 shadow-card backdrop-blur-xl"
-        style={delay(startDelay)}
-      >
-        <p className="font-mono text-[0.65rem] tracking-[0.18em] text-subtle uppercase">
-          {kpi.label}
-        </p>
-        <p className="mt-1 flex items-center gap-2 font-mono text-xl font-semibold text-fg tabular">
-          {kpi.value}
-          <TrendIcon className="size-4 text-accent" />
-        </p>
-      </div>
-    </div>
-  );
-}
-
-const kpiPositions = [
-  "top-[12%] left-[2%] lg:left-[4%]",
-  "right-[4%] bottom-[16%] lg:right-[12%]",
-];
 
 export function Hero() {
   return (
@@ -175,14 +134,6 @@ export function Hero() {
 
         <div className="relative -mx-4 h-[340px] sm:mx-0 sm:h-[460px] lg:-mr-16 lg:h-[640px]">
           <HeroVisual />
-          {/* {heroKpis.slice(0, kpiPositions.length).map((kpi, i) => (
-            <KpiCard
-              key={kpi.label}
-              kpi={kpi}
-              className={kpiPositions[i]}
-              startDelay={1 + i * 0.2}
-            />
-          ))} */}
         </div>
       </Container>
 
